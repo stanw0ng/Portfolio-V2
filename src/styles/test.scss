@@ -1,0 +1,18 @@
+// Import variables.scss
+@import 'variables.scss';
+
+// Use the variables
+body {
+  background-color: transparent;
+  color: wheat;
+}
+
+.banner {
+  margin: auto 0;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between
+}

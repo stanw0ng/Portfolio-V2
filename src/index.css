@@ -1,11 +1,12 @@
-@import '../node_modules/normalize.css/normalize.css';
+@import 'normalize.css/normalize.css';
 
 @font-face {
   font-family: 'Diatype';
   src: url('./fonts/ABCDiatype-Regular-Trial.woff') format('woff');
 }
 
-h1{
+h1,
+h2{
   font-family: 'Diatype'
 }
 
@@ -59,7 +60,7 @@ button {
 button,
 input {
   background-color: transparent;
-  border: none;
+  border: 1px solid;
   color: inherit;
 }
 
