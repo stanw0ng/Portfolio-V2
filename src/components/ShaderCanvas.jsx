@@ -7,7 +7,7 @@ class CustomShaderMaterial extends ShaderMaterial {
     super({
       uniforms: {
         u_time: { value: 0 },
-        u_resolution: { value: [window.innerWidth, window.innerHeight] },
+        u_resolution: { value: [window.innerWidth, window.innerHeight] }
       },
       fragmentShader: `
           precision mediump float;

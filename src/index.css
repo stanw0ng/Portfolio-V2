@@ -5,11 +5,6 @@
   src: url('./fonts/ABCDiatype-Regular-Trial.woff') format('woff');
 }
 
-h1,
-h2{
-  font-family: 'Diatype'
-}
-
 /* Reset box sizing */
 *,
 *::before,
@@ -28,6 +23,7 @@ h6,
 p,
 ol,
 ul {
+  font-family: 'Diatype';
   margin: 0;
   padding: 0;
 }
@@ -93,4 +89,3 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
