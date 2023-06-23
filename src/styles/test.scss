@@ -12,14 +12,20 @@ body {
 }
 
 nav {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 2rem;
+  z-index: 999;
 }
 
 .content-container {
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative; /* Add position: relative */
+  clip-path: inset(0); /* Clip the container to its boundaries */
 }
+
+

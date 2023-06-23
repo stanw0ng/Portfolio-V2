@@ -9,7 +9,7 @@ function Info() {
   }, []);
 
   return (
-<section className={`split-section ${fadeIn ? 'show' : ''}`} data-scroll-section data-scroll-id="info-section">
+<section className={`split-section ${fadeIn ? 'show' : ''}`}>
 
       <div className='left-info'>
         <p>

@@ -5,6 +5,7 @@ import ShaderCanvas from './components/ShaderCanvas';
 import Navigation from './components/Navigation';
 import Info from './components/Info';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 import './App.css';
 import './styles/base.css';
@@ -30,22 +31,32 @@ function App() {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const target = contentRef.current.querySelector(`[data-scroll-id="${sectionId}"]`);
+    const target = contentRef.current.querySelector(`[data-scroll-target="${sectionId}"]`);
     if (target) {
       scrollInstanceRef.current.scrollTo(target, {
-        offset: -50, // Adjust this offset to account for any fixed headers or spacing
+        offset: -80,
         duration: 800,
       });
+
+      scrollInstanceRef.current.update();
     }
   };
+
 
   return (
     <div ref={scrollRef}>
       <ShaderCanvas />
       <Navigation contentRef={contentRef} scrollToSection={scrollToSection} />
       <div ref={contentRef} className="content-container" data-scroll-container>
-        <Info />
-        <Projects />
+        <div data-scroll-section data-scroll-target="info-section">
+          <Info />
+        </div>
+        <div data-scroll-section data-scroll-target="projects-section">
+          <Projects />
+        </div>
+        <div data-scroll-section data-scroll-target="contact-section">
+          <Contact />
+        </div>
       </div>
     </div>
   );
