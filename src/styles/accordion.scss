@@ -1,0 +1,50 @@
+.projects-header {
+  text-align: left;
+}
+
+.accordion {
+  border: 1px solid wheat;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: red;
+  background-color: rgba(245, 222, 179, 0.6);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: wheat;
+}
+
+.accordion-header h2 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.open {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .8s ease;
+}
+
+.accordion-content-inner {
+  padding: 1rem;
+  max-height: 100%;
+  padding: 10px;
+}
+

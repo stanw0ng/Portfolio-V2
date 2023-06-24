@@ -1,5 +1,16 @@
 .project-list {
-  margin: 2rem;
+  margin: 2rem 0;
+  height: 100vh;
+
+  .projects-header {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .date-year {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
 
   p {
     text-align: left;

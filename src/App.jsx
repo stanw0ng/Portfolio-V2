@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 
 import ShaderCanvas from './components/ShaderCanvas';
@@ -8,13 +8,14 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 import './App.css';
-import './styles/base.css';
 import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 function App() {
   const scrollRef = useRef(null);
   const contentRef = useRef(null);
   const scrollInstanceRef = useRef(null);
+
+  const [activeSection, setActiveSection] = useState('info-section');
 
   useEffect(() => {
     scrollInstanceRef.current = new LocomotiveScroll({
@@ -42,14 +43,17 @@ function App() {
     }
   };
 
-
   return (
     <div ref={scrollRef}>
       <ShaderCanvas />
-      <Navigation contentRef={contentRef} scrollToSection={scrollToSection} />
+      <Navigation
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        scrollToSection={scrollToSection}
+      />
       <div ref={contentRef} className="content-container" data-scroll-container>
         <div data-scroll-section data-scroll-target="info-section">
-          <Info />
+          <Info activeSection={activeSection} />
         </div>
         <div data-scroll-section data-scroll-target="projects-section">
           <Projects />
