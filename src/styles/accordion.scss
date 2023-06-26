@@ -9,7 +9,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   color: red;
-  background-color: rgba(245, 222, 179, 0.6);
+  background-color: rgba(245, 222, 179, 0.7);
 }
 
 .accordion-header {
@@ -27,7 +27,7 @@
 }
 
 .accordion-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-right: 0.5rem;
   transition: transform 0.3s ease;
 }
@@ -39,7 +39,7 @@
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .8s ease;
+  transition: max-height .6s ease;
 }
 
 .accordion-content-inner {

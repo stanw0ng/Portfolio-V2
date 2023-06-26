@@ -1,6 +1,6 @@
 .split-section {
   display: flex;
-  height: 100vh;
+  height: 100%;
   align-items: stretch; /* Update to stretch instead of center */
   opacity: 0;
   transition: opacity 1.2s ease-in;

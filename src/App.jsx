@@ -24,6 +24,32 @@ function App() {
       // Add any other options you want to customize
     });
 
+    //Updates current section and reflects this with the underlined h2 in the Navgation component
+    scrollInstanceRef.current.on('scroll', (instance) => {
+      const scrollY = instance.scroll.y;
+      const sections = contentRef.current.querySelectorAll('[data-scroll-section]');
+      const windowHeight = window.innerHeight;
+  
+      let activeSectionId = null; // Track the active section ID
+      let minDistance = windowHeight * 0.6; // Set a threshold distance for the active section
+  
+      sections.forEach((section) => {
+        const sectionId = section.getAttribute('data-scroll-target');
+        const sectionTop = section.getBoundingClientRect().top + scrollY;
+        const sectionBottom = sectionTop + section.offsetHeight;
+  
+        if (scrollY >= sectionTop - windowHeight * 0.4 && scrollY < sectionBottom - windowHeight * 0.4) {
+          activeSectionId = sectionId;
+        } else if (sectionTop > scrollY && sectionTop - scrollY < minDistance) {
+          minDistance = sectionTop - scrollY;
+          activeSectionId = sectionId;
+        }
+      });
+  
+      setActiveSection(activeSectionId); // Update the active section
+    });
+
+    // Cleanup
     return () => {
       if (scrollInstanceRef.current) {
         scrollInstanceRef.current.destroy();
@@ -39,6 +65,7 @@ function App() {
         duration: 800,
       });
 
+      setActiveSection(sectionId);
       scrollInstanceRef.current.update();
     }
   };
