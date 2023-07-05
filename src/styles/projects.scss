@@ -1,6 +1,6 @@
 .project-list {
   margin: 2rem 0;
-  height: 100vh;
+  height: 100%;
 
   .projects-header {
     text-align: left;
@@ -9,11 +9,23 @@
 
   .date-year {
     text-align: left;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
   }
 
   p {
     text-align: left;
+    font-size: 2rem;
   }
 
+  .split-view-box{
+    display: flex;
+
+    .project-info {
+      flex-basis: 40%; /* Update to flex-basis instead of width */
+    }
+
+    .media-carousel {
+      flex-basis: 60%; /* Update to flex-basis instead of width */
+    }
+  }
 }

@@ -5,6 +5,12 @@
   src: url('./fonts/ABCDiatype-Regular-Trial.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Diatype-Plus';
+  src: url('./fonts/ABCDiatypePlusVariable-Trial.woff') format('woff');
+
+}
+
 /* Reset box sizing */
 *,
 *::before,
@@ -83,9 +89,4 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }

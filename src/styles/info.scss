@@ -1,6 +1,7 @@
 .split-section {
   display: flex;
-  height: 100%;
+  height: calc(100vh - 10vh);
+  flex: 1;
   align-items: stretch; /* Update to stretch instead of center */
   opacity: 0;
   transition: opacity 1.2s ease-in;
@@ -11,38 +12,67 @@
 }
 
 .split-section.show .left-info{
-  flex-basis: 60%; /* Update to flex-basis instead of width */
+  flex-basis: 65%; /* Update to flex-basis instead of width */
 }
 
 .split-section.show .right-info {
-  flex-basis: 40%; /* Update to flex-basis instead of width */
+  flex-basis: 35%; /* Update to flex-basis instead of width */
 }
 
 .left-info,
 .right-info {
-  padding: 20px;
-  height: 100%;
+  flex: 1;
   overflow-y: auto;
 }
 
 .left-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+  padding: 2rem 2rem 2rem 0;
+  font-size: 2rem;
+
   p {
-  margin: auto 0;
-  font-size: 1.5rem;
-  text-align: left;
+    text-align: left;
+  }
+
+  .call-to-action {
+    display: inline-block;
+    margin-top: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: wheat;
+      transition: width 1.5s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 
 .right-info {
   display: flex;
   gap: 2rem;
+  padding: 2rem;
 
   p {
     text-align: left;
+    margin-bottom: 2rem;
   }
 
   .skills-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   ul {
@@ -51,6 +81,7 @@
 
   h1 {
     width: 1rem;
+    margin-right: 2rem;
   }
 
   li {
@@ -59,19 +90,32 @@
     margin-bottom: 1rem; /* Add margin-bottom for the vertical gap */
     text-align: left;
     align-items: center;
+    font-size: 1.5rem;
   }
 
   .skill-container{
     display: flex;
     flex-direction: column;
   }
+
+  .skill-category {
+    margin-bottom: .25rem;
+  }
 }
 
 .vertical-split {
   width: 2px;
   background-color: wheat;
+  height: 97%;
 }
 
-.skill-category {
-  margin-bottom: .25rem;
+.weight-grow {
+  font-family: 'Diatype-Plus';
+  font-weight: 350;
+  transition:  font-weight 0.7s ease-in-out;
+  cursor: pointer;
+}
+
+.weight-grow:hover {
+  font-weight: 700;
 }

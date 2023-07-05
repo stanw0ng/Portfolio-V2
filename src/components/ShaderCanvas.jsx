@@ -124,19 +124,23 @@ class CustomShaderMaterial extends ShaderMaterial {
             float perlin = mix(b, t, gridUv.y);
 
             // part 4.3 - display perlin noise
-            color = vec3(1.0, perlin + 0.2, perlin);
 
+            // Blood Cell Theme
+            // color = vec3(1.0, perlin + 0.2, perlin);
+
+            // Earth Theme
+            color = vec3(0.0, 0.28, perlin + .25);
 
             // part 4.5 - update randomGradient function with time
 
             // part 5.1 - billow noise
             // float billow = abs(perlin);
-            // color = vec3(billow);
+            // color = vec3(1.0, billow + 0.2, billow);
 
             // part 5.2 - ridged noise
             // float ridgedNoise = 1.0 - abs(perlin);
             // ridgedNoise = ridgedNoise * ridgedNoise;
-            // color = vec3(ridgedNoise);
+            // color = vec3(1.0, ridgedNoise + 0.2, ridgedNoise);
 
             gl_FragColor = vec4(color, 1.0);
           }

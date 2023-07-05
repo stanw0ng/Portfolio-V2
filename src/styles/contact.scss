@@ -1,6 +1,20 @@
 .contact-container {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
   height: 100vh;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  h1 {
+    margin: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 2rem auto;
+    font-size: 2rem;
+  }
 }
+
