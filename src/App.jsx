@@ -71,8 +71,13 @@ function App() {
     const target = contentRef.current.querySelector(`[data-scroll-target="${sectionId}"]`);
     if (target) {
       if (sectionId === 'info-section') {
-        // Scroll to the top without applying the offset
+        // Scroll to the top of
         scrollInstanceRef.current.scrollTo(0, {
+          duration: 800,
+        });
+      } else if (sectionId === 'contact-section') {
+        // Scroll to the bottom of the page
+        scrollInstanceRef.current.scrollTo(contentRef.current.offsetHeight, {
           duration: 800,
         });
       } else {
@@ -82,12 +87,13 @@ function App() {
           duration: 800,
         });
       }
-
+  
       setActiveSection(sectionId);
       scrollInstanceRef.current.update();
     }
   };
-
+  
+  
   return (
     <div ref={scrollRef}>
       <ShaderCanvas />
