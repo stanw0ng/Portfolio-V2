@@ -49,21 +49,27 @@ function Projects() {
         <Accordion title="Open Book">
 
           <div className='split-view-box'>
+
             <div className='project-info'>
+            
+              <div className='project-tech-stack'>
+                <h2>TECH STACK</h2>
+                <p>Native JS • JQuery • PostreSQL • Express</p>
+              </div>
+              
               <p className='project-description'>
                 Open Book is a midterm project presented for web development bootcamp at Lighthouse Labs. It was developed over one week in collaboration another student.<br/><br/>
                 The application is made to draft and upload writing as well as contribute to the writing of others. These contributions can be upvoted and added to the original text with the approval its author.
               </p>
-              <p className='project-tech-stack'>
-                TECH STACK:
-                Native JS, JQuery, PostreSQL, Express
-              </p>
+
               <div className='project-links'>
-                <a href=''>Live Demo Coming Soon</a>
-                <a href='https://github.com/stanw0ng/Midterm-Project'>Github Repo</a>
+                <a href='#'>Live Demo WIP</a>
+                <a href='https://github.com/stanw0ng/Midterm-Project'>Github Repo ↗</a>
               </div>
             </div>
+
             <MediaCarousel mediaList={media_openbook}/>
+
           </div>
 
         </Accordion>

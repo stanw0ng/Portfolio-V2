@@ -71,7 +71,7 @@ function App() {
     const target = contentRef.current.querySelector(`[data-scroll-target="${sectionId}"]`);
     if (target) {
       if (sectionId === 'info-section') {
-        // Scroll to the top of
+        // Scroll to the top of the page
         scrollInstanceRef.current.scrollTo(0, {
           duration: 800,
         });
@@ -83,7 +83,7 @@ function App() {
       } else {
         // Scroll to the section with the offset
         scrollInstanceRef.current.scrollTo(target, {
-          offset: -80,
+          offset: -110,
           duration: 800,
         });
       }
