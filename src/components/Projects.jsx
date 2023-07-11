@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/projects.scss';
 import Accordion from './Accordion';
 import MediaCarousel from './Carousel';
-import { media_openbook } from '../media/openbook_media';
+import { media_openbook, media_sous, media_Portfolio2 } from '../media/media';
 
 function Projects() {
 
@@ -14,36 +14,55 @@ function Projects() {
         <li>
         <Accordion title="Portfolio 2.0">
 
-          <p className='project-description'>
-          </p>
+          <div className='split-view-box'>
 
-          <p className='project-tech-stack'>
-            TECH STACK:
-            React, Three.js, LocomotiveScroll
-          </p>
+            <div className='project-info'>
 
-          <div className='project-links'>
-            <a href=''>Live Demo Coming Soon</a>
-            <a href='https://github.com/angelren1220/Recipe-Hub'>Github Repo</a>
+              <div className='project-tech-stack'>
+                <h2>TECH STACK</h2>
+                <p>React • Three.js • LocomotiveScroll</p>
+              </div>
+
+              <p className='project-description'>
+              </p>
+
+              <div className='project-links'>
+                <a href='https://github.com/stanw0ng/Portfolio-V2'>Github Repo ↗</a>
+              </div>
+
+            </div>
+
+            <MediaCarousel mediaList={media_Portfolio2}/>
           </div>
+
         </Accordion>
 
         <Accordion title="Sous">
-          <p className='project-description'>
-            Sous (as in sous-chef) is the final project presented for a web-development bootcamp. It was developed over two weeks with a React frontend and Rails backend in collaboration with two other students. The project was built from the ground up such as developing an ERD and wireframing in Figma.<br/><br/>
+          
+          <div className='split-view-box'>
 
-            This an application transforms the recipe rolodexes of the past into a digital platform where recipes can be collected and shared with other users.
-          </p>
+            <div className='project-info'>
 
-          <p className='project-tech-stack'>
-            TECH STACK:
-            React, Ruby on Rails, PostreSQL, Radix UI
-          </p>
+              <div className='project-tech-stack'>
+                <h2>TECH STACK</h2>
+                <p>React • Ruby on Rails • PostreSQL • Radix UI</p>
+              </div>
 
-          <div className='project-links'>
-            <a href=''>Live Demo Coming Soon</a>
-            <a href='https://github.com/angelren1220/Recipe-Hub'>Github Repo</a>
+              <p className='project-description'>
+                Sous (as in sous-chef) is the final project presented for a web-development bootcamp. It was developed over two weeks with a React frontend and Rails backend in collaboration with two other students. The project was built from the ground up such as developing an ERD and wireframing in Figma.<br/><br/>
+                This an application transforms the recipe rolodexes of the past into a digital platform where recipes can be collected and shared with other users.
+              </p>
+
+              <div className='project-links'>
+                <a href='#'>Live Demo WIP</a>
+                <a href='https://github.com/angelren1220/Recipe-Hub'>Github Repo ↗</a>
+              </div>
+            </div>
+
+            <MediaCarousel mediaList={media_sous}/>
+
           </div>
+
         </Accordion>
 
         <Accordion title="Open Book">
@@ -67,6 +86,8 @@ function Projects() {
                 <a href='https://github.com/stanw0ng/Midterm-Project'>Github Repo ↗</a>
               </div>
             </div>
+
+            {/* <div className='split-line'></div> */}
 
             <MediaCarousel mediaList={media_openbook}/>
 

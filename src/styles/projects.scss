@@ -19,11 +19,15 @@
 
   .split-view-box{
     display: flex;
+    height: 100%;
+    // border-top: 2px solid wheat;
 
     .project-info {
       display: flex;
+      flex: 1;
       flex-direction: column;
       flex-basis: 40%; /* Update to flex-basis instead of width */
+      padding-right: 2rem;
 
       .project-tech-stack {
         text-align: left;
@@ -43,8 +47,16 @@
       }
     }
 
+    .split-line {
+      width: 2px; /* Adjust the width as needed */
+      background-color: wheat; /* Adjust the color as needed */
+      margin: 0 1rem; /* Adjust the margin as needed */
+      height: 100%;
+    }
+
     .media-carousel {
       flex-basis: 60%; /* Update to flex-basis instead of width */
+      // margin-top: 2rem;
     }
   }
 }

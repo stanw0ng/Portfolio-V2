@@ -33,40 +33,49 @@ const MediaCarousel = ({ mediaList }) => {
   };
 
   const counterText = `${currentIndex + 1}/${mediaList.length}`;
-  const captionText = mediaList[currentIndex].caption;
+  const mediaItem = mediaList[currentIndex];
+
+  let mediaContent;
+  if (mediaItem.type === 'image') {
+    mediaContent = <img src={mediaItem.src} alt="Media" />;
+  } else if (mediaItem.type === 'video') {
+    mediaContent = (
+      <video src={mediaItem.src} muted loop playsInline autoPlay />
+    );
+  }
 
   return (
     <div className="media-carousel">
       <div className="carousel-content">
-        <img src={mediaList[currentIndex].src} alt="Media" />
-      <div className="carousel-controls">
-
-        <div
-          className={`carousel-control-left ${isLeftHovered ? 'hovered' : ''}`}
-          onClick={handlePrev}
-          onMouseEnter={handleLeftMouseEnter}
-          onMouseLeave={handleLeftMouseLeave}
-        >
-          ⟵
+        {mediaContent}
+        <div className="carousel-controls">
+          <div
+            className={`carousel-control-left ${
+              isLeftHovered ? 'hovered' : ''
+            }`}
+            onClick={handlePrev}
+            onMouseEnter={handleLeftMouseEnter}
+            onMouseLeave={handleLeftMouseLeave}
+          >
+            ⟵
+          </div>
+          <div
+            className={`carousel-control-right ${
+              isRightHovered ? 'hovered' : ''
+            }`}
+            onClick={handleNext}
+            onMouseEnter={handleRightMouseEnter}
+            onMouseLeave={handleRightMouseLeave}
+          >
+            ⟶
+          </div>
         </div>
-        <div
-          className={`carousel-control-right ${
-            isRightHovered ? 'hovered' : ''
-          }`}
-          onClick={handleNext}
-          onMouseEnter={handleRightMouseEnter}
-          onMouseLeave={handleRightMouseLeave}
-        >
-          ⟶
-        </div>
-      </div>
       </div>
 
-      <div className='content-info'>
-      <div className="carousel-caption">{captionText}</div>
-      <div className="carousel-counter">{counterText}</div>
+      <div className="content-info">
+        <div className="carousel-caption">{mediaItem.caption}</div>
+        <div className="carousel-counter">{counterText}</div>
       </div>
-
     </div>
   );
 };
