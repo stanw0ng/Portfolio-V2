@@ -17,7 +17,7 @@ function Info({ scrollToSection, activeSection }) {
 
           Curious by nature, he frequently adopts new languages and technologies into his practice. Currently, he is exploring the possibilities of Python and Three.js.<br/><br/>
 
-          When he is not too busy, he enjoys really long bike rides, cooking for friends, as well as having conversations with his cat and houseplants.
+          When he is not too busy, he enjoys really long bike rides, cooking for friends, as well as conversations with his cat and houseplants.
         </p>
 
         <h2

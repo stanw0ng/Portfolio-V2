@@ -12,3 +12,30 @@
 * {
   box-sizing: border-box;
 }
+
+a {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: wheat;
+    transition: width 1.5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+

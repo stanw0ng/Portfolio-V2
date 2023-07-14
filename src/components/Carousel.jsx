@@ -32,7 +32,6 @@ const MediaCarousel = ({ mediaList }) => {
     setIsRightHovered(false);
   };
 
-  const counterText = `${currentIndex + 1}/${mediaList.length}`;
   const mediaItem = mediaList[currentIndex];
 
   let mediaContent;
@@ -44,37 +43,46 @@ const MediaCarousel = ({ mediaList }) => {
     );
   }
 
+  const counterText =
+    mediaList.length > 1 ? `${currentIndex + 1}/${mediaList.length}` : '';
+
+  const showArrowControls = mediaList.length > 1; // Check if there is more than one item
+
   return (
     <div className="media-carousel">
       <div className="carousel-content">
         {mediaContent}
         <div className="carousel-controls">
-          <div
-            className={`carousel-control-left ${
-              isLeftHovered ? 'hovered' : ''
-            }`}
-            onClick={handlePrev}
-            onMouseEnter={handleLeftMouseEnter}
-            onMouseLeave={handleLeftMouseLeave}
-          >
-            ⟵
-          </div>
-          <div
-            className={`carousel-control-right ${
-              isRightHovered ? 'hovered' : ''
-            }`}
-            onClick={handleNext}
-            onMouseEnter={handleRightMouseEnter}
-            onMouseLeave={handleRightMouseLeave}
-          >
-            ⟶
-          </div>
+          {showArrowControls && ( // Conditionally render arrow controls
+            <div
+              className={`carousel-control-left ${
+                isLeftHovered ? 'hovered' : ''
+              }`}
+              onClick={handlePrev}
+              onMouseEnter={handleLeftMouseEnter}
+              onMouseLeave={handleLeftMouseLeave}
+            >
+              ⟵
+            </div>
+          )}
+          {showArrowControls && (
+            <div
+              className={`carousel-control-right ${
+                isRightHovered ? 'hovered' : ''
+              }`}
+              onClick={handleNext}
+              onMouseEnter={handleRightMouseEnter}
+              onMouseLeave={handleRightMouseLeave}
+            >
+              ⟶
+            </div>
+          )}
         </div>
       </div>
 
       <div className="content-info">
         <div className="carousel-caption">{mediaItem.caption}</div>
-        <div className="carousel-counter">{counterText}</div>
+        {counterText && <div className="carousel-counter">{counterText}</div>}
       </div>
     </div>
   );

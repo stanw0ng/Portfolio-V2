@@ -39,6 +39,7 @@
   .call-to-action {
     display: inline-block;
     margin-top: auto;
+    margin-bottom: 1rem;
 
     &:hover {
       cursor: pointer;
@@ -106,7 +107,7 @@
 .vertical-split {
   width: 2px;
   background-color: wheat;
-  height: 97%;
+  height: 95%;
 }
 
 .weight-grow {

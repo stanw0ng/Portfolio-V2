@@ -3,20 +3,38 @@ import '../styles/accordion.scss';
 
 const Accordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [contentHeight, setContentHeight] = useState(0);
   const contentRef = useRef(null);
 
   const toggleAccordion = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   useEffect(() => {
     if (isOpen) {
-      contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
+      setContentHeight(contentRef.current.scrollHeight);
     } else {
-      contentRef.current.style.maxHeight = '0';
+      setContentHeight(0);
     }
   }, [isOpen]);
-  
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.target === contentRef.current) {
+          setContentHeight(entry.contentRect.height);
+          break;
+        }
+      }
+    });
+
+    resizeObserver.observe(contentRef.current);
+
+    return () => {
+      resizeObserver.unobserve(contentRef.current);
+    };
+  }, []);
+
   return (
     <div className="accordion">
       <div className="accordion-header" onClick={toggleAccordion}>
@@ -25,8 +43,11 @@ const Accordion = ({ title, children }) => {
           {isOpen ? '-' : '+'}
         </span>
       </div>
-      <div ref={contentRef} className="accordion-content">
-        <div className={`accordion-content-inner ${isOpen ? 'open' : ''}`}>
+      <div
+        className={`accordion-content ${isOpen ? 'open' : ''}`}
+        style={{ maxHeight: isOpen ? contentHeight : 0 }}
+      >
+        <div ref={contentRef} className="accordion-content-inner">
           {children}
         </div>
       </div>
