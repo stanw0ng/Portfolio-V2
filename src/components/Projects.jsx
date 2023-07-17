@@ -265,7 +265,7 @@ function Projects() {
               </p>
 
               <div className='project-links'>
-                <a href='https://vimeo.com/682011600'>View project presentation for DesignTO ↗</a>
+                <a href='https://micro-macro.format.com/'>View project presentation for DesignTO ↗</a>
               </div>
 
             </div>

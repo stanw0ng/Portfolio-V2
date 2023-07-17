@@ -9,7 +9,7 @@ function Info({ scrollToSection, activeSection }) {
   }, []);
 
   return (
-<section className={`split-section ${fadeIn ? 'show' : ''}`}>
+    <section className={`split-section ${fadeIn ? 'show' : ''}`}>
 
       <div className='left-info'>
         <p>
@@ -30,9 +30,8 @@ function Info({ scrollToSection, activeSection }) {
       <div className="vertical-split"></div>
 
       <div className='right-info'>
+      <p className='skills-text'>He is comfortable working with the following software and languages:</p>
         <ul>
-          <p className='skills-text'>He is comfortable working with the following software and languages:</p>
-
           <li>
             <h1>1</h1>
             <div className='skill-container'>

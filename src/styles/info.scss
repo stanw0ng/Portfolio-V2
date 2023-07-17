@@ -1,8 +1,9 @@
 .split-section {
   display: flex;
-  height: calc(100vh - 10vh);
+  height: 100%;
   flex: 1;
-  align-items: stretch; /* Update to stretch instead of center */
+  align-items: stretch;
+  /* Update to stretch instead of center */
   opacity: 0;
   transition: opacity 1.2s ease-in;
 }
@@ -11,26 +12,30 @@
   opacity: 1;
 }
 
-.split-section.show .left-info{
-  flex-basis: 65%; /* Update to flex-basis instead of width */
+.split-section.show .left-info {
+  flex-basis: 65%;
+  /* Update to flex-basis instead of width */
 }
 
 .split-section.show .right-info {
-  flex-basis: 35%; /* Update to flex-basis instead of width */
+  flex-basis: 35%;
+  /* Update to flex-basis instead of width */
 }
 
 .left-info,
 .right-info {
   flex: 1;
-  overflow-y: auto;
+  height: 100%
 }
 
 .left-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align text to the left */
+  align-items: flex-start;
+  /* Align text to the left */
   padding: 2rem 2rem 2rem 0;
   font-size: 2rem;
+  height: 87vh;
 
   p {
     text-align: left;
@@ -39,7 +44,6 @@
   .call-to-action {
     display: inline-block;
     margin-top: auto;
-    margin-bottom: 1rem;
 
     &:hover {
       cursor: pointer;
@@ -64,6 +68,7 @@
 
 .right-info {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   padding: 2rem;
 
@@ -88,13 +93,15 @@
   li {
     display: flex;
     gap: 2rem;
-    margin-bottom: 1rem; /* Add margin-bottom for the vertical gap */
+    margin-bottom: 1rem;
+    /* Add margin-bottom for the vertical gap */
     text-align: left;
     align-items: center;
     font-size: 1.5rem;
+    width: 100%;
   }
 
-  .skill-container{
+  .skill-container {
     display: flex;
     flex-direction: column;
   }
@@ -107,16 +114,101 @@
 .vertical-split {
   width: 2px;
   background-color: wheat;
-  height: 95%;
+  height: 85vh;
 }
 
 .weight-grow {
   font-family: 'Diatype-Plus';
   font-weight: 350;
-  transition:  font-weight 0.7s ease-in-out;
+  transition: font-weight 0.7s ease-in-out;
   cursor: pointer;
 }
 
 .weight-grow:hover {
   font-weight: 700;
+}
+
+@media (max-width: 1670px) {
+
+  .split-section.show .left-info {
+    flex-basis: unset;
+    /* Update to flex-basis instead of width */
+  }
+
+  .left-info {
+    padding: 2rem 0;
+    height: 90vh;
+    flex: unset;
+  }
+
+  .split-section {
+    flex-direction: column;
+
+    .call-to-action {
+      margin-top: auto;
+      align-self: center;
+    }
+  }
+
+  .vertical-split {
+    width: 100%;
+    background-color: wheat;
+    height: 2px;
+    margin-top: 1rem;
+    padding: 1px 0;
+  }
+
+  .right-info {
+    padding: 2rem 0;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li {
+      display: flex;
+      margin-bottom: 0;
+      align-items: center;
+      text-align: left;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0 2rem;
+      display: flex;
+      align-items: center;
+      font-size: 5rem;
+    }
+
+    .skill-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        padding: 0 10rem;
+        margin-bottom: 0;
+        text-align: center;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: wheat;
+    }
+  }
 }

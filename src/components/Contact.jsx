@@ -9,9 +9,15 @@ function Contact() {
       <h2>Alternatively, reach out via</h2>
 
       <div className='social-links'>
-        <h2>Github ↗</h2>
-        <h2>LinkedIn ↗</h2>
-        <h2>Are.na ↗</h2>
+        <a href="https://github.com/stanw0ng">
+          <h2>Github ↗</h2>
+        </a>
+        <a href="https://www.linkedin.com/in/stanley-wong-work/">
+          <h2>LinkedIn ↗</h2>
+        </a>
+        <a href="https://www.are.na/stanley-wong">
+          <h2>Are.na ↗</h2>
+        </a>
       </div>
     </section>
   );
