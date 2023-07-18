@@ -1,6 +1,7 @@
 .split-section {
   display: flex;
   height: 100%;
+  max-width: 100%;
   flex: 1;
   align-items: stretch;
   /* Update to stretch instead of center */
@@ -94,7 +95,6 @@
     display: flex;
     gap: 2rem;
     margin-bottom: 1rem;
-    /* Add margin-bottom for the vertical gap */
     text-align: left;
     align-items: center;
     font-size: 1.5rem;
@@ -117,28 +117,29 @@
   height: 85vh;
 }
 
-.weight-grow {
-  font-family: 'Diatype-Plus';
-  font-weight: 350;
-  transition: font-weight 0.7s ease-in-out;
-  cursor: pointer;
-}
+// .weight-grow {
+//   font-family: 'Diatype-Plus';
+//   font-weight: 350;
+//   transition: font-weight 0.7s ease-in-out;
+//   cursor: pointer;
+// }
 
-.weight-grow:hover {
-  font-weight: 700;
-}
+// .weight-grow:hover {
+//   font-weight: 700;
+// }
 
 @media (max-width: 1670px) {
 
   .split-section.show .left-info {
     flex-basis: unset;
-    /* Update to flex-basis instead of width */
   }
 
   .left-info {
     padding: 2rem 0;
-    height: 90vh;
+    max-width: 100%;
+    height: 89vh;
     flex: unset;
+    font-size: 2.5rem;
   }
 
   .split-section {
@@ -147,6 +148,7 @@
     .call-to-action {
       margin-top: auto;
       align-self: center;
+      font-size: 4rem;
     }
   }
 
@@ -159,7 +161,9 @@
   }
 
   .right-info {
+    max-width: 100%;
     padding: 2rem 0;
+    border-bottom: 2px solid wheat;
 
     ul {
       display: flex;
@@ -200,15 +204,68 @@
         text-align: center;
       }
     }
+  }
+}
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background-color: wheat;
+@media only screen and (max-width: 768px) {
+  .left-info {
+    font-size: 1.75rem;
+    height: 85vh;
+
+    .call-to-action {
+      font-size: 3rem;
+    }
+  }
+
+  .right-info {
+
+    .skill-container {
+      p {
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .left-info {
+    font-size: 1.25rem;
+    height: 89vh;
+
+    .call-to-action {
+      font-size: 1.25rem;
+    }
+  }
+
+  .right-info {
+    padding: 1rem 0;
+
+    .skills-text {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+
+    li {
+    
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+
+      .skill-container {
+        align-items: flex-start;
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          padding: 0;
+          font-size: 1.25rem;
+          text-align: left;
+        }
+      }
+
     }
   }
 }

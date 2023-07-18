@@ -10,25 +10,39 @@ body {
   margin: auto 0;
 }
 
-nav {
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  z-index: 999;
-
-  h2 {
-    font-size: 2.5rem;
-  }
-}
-
 .content-container {
+  max-width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative; 
   clip-path: inset(0); /* Clip the container to its boundaries */
+}
+
+a {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: wheat;
+    transition: width 1.5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 
