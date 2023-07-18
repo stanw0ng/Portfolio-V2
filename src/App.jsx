@@ -83,7 +83,7 @@ function App() {
       } else {
         // Scroll to the section with the offset
         scrollInstanceRef.current.scrollTo(target, {
-          offset: -110,
+          offset: 0,
           duration: 800,
         });
       }

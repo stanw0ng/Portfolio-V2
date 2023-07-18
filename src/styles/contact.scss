@@ -13,7 +13,7 @@
   .social-links {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     margin: 2rem auto;
     font-size: 2rem;
 
@@ -23,6 +23,30 @@
   }
 }
 
-@media (max-width: 1670px) {
+@media (max-width: 390px) {
+  .contact-container {
+    font-size: .75rem;
+  
+    h1 {
+      margin: .5rem;
+    }
+  
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 1rem auto;
+      font-size: 1rem;
+  
+      h2 {
+        text-align: center;
+        margin: 0 .5rem;
+      }
+
+      a {
+        margin-bottom: .25rem;
+      }
+    }
+  }
 }
 
