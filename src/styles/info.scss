@@ -43,13 +43,14 @@
   }
 
   .call-to-action {
+    position: relative;
     display: inline-block;
     margin-top: auto;
-
+  
     &:hover {
       cursor: pointer;
     }
-
+  
     &::after {
       content: '';
       position: absolute;
@@ -60,7 +61,7 @@
       background-color: wheat;
       transition: width 1.5s ease;
     }
-
+  
     &:hover::after {
       width: 100%;
     }
@@ -137,7 +138,6 @@
   .left-info {
     padding: 2rem 0;
     max-width: 100%;
-    height: 89vh;
     flex: unset;
     font-size: 2.5rem;
   }
@@ -210,7 +210,6 @@
   .left-info {
     padding-top: .5rem;
     font-size: 1.75rem;
-    height: 85vh;
 
     .call-to-action {
       font-size: 3rem;
