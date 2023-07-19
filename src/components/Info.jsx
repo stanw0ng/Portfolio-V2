@@ -24,7 +24,7 @@ function Info({ scrollToSection, activeSection }) {
           className={`nav-link call-to-action ${activeSection === 'projects-section' ? 'active' : ''}`}
           onClick={() => scrollToSection('projects-section')}
         >
-        Click here to see recent work ↘</h2>
+        View recent work ↘</h2>
       </div>
 
       <div className="vertical-split"></div>
