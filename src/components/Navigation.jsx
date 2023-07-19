@@ -3,7 +3,7 @@ import '../styles/navigation.scss';
 
 function Navigation({ scrollToSection, activeSection }) {
   return (
-    <nav>
+    <nav  data-scroll="1" data-scroll-sticky="1" data-scroll-target="#sticky" >
       <h2
         className={`nav-link ${activeSection === 'info-section' ? 'active' : ''}`}
         onClick={() => scrollToSection('info-section')}

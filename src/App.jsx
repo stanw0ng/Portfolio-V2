@@ -104,13 +104,11 @@ function App() {
   return (
     <div ref={contentRef} data-scroll-container>
       <ShaderCanvas />
-      <div data-scroll="1" data-scroll-sticky="1" data-scroll-target="#sticky">
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         scrollToSection={scrollToSection}
       />
-      </div>
       <div ref={scrollRef} className="content-container">
         <div data-scroll-section data-scroll-target="info-section">
           <Info activeSection={activeSection} scrollToSection={scrollToSection} />
