@@ -21,6 +21,13 @@ function App() {
     scrollInstanceRef.current = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
+      // Enables Loco for other devices, this is especially important for sticky elements which have to be manage specifically by Locomotive scroll (other than setting `position: sticky`)
+      smartphone: {
+        smooth: true
+      },
+      tablet: {
+        smooth: true
+      },
     });
 
     // Updates current section and reflects this with the underlined h2 in the Navigation component
@@ -95,14 +102,16 @@ function App() {
   
   
   return (
-    <div ref={scrollRef}>
+    <div ref={contentRef} data-scroll-container>
       <ShaderCanvas />
+      <div data-scroll="1" data-scroll-sticky="1" data-scroll-target="#sticky">
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         scrollToSection={scrollToSection}
       />
-      <div ref={contentRef} className="content-container" data-scroll-container>
+      </div>
+      <div ref={scrollRef} className="content-container">
         <div data-scroll-section data-scroll-target="info-section">
           <Info activeSection={activeSection} scrollToSection={scrollToSection} />
         </div>
