@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/navigation.scss';
 
 function Navigation({ scrollToSection, activeSection }) {
+  
   return (
     <nav  data-scroll="1" data-scroll-sticky="1" data-scroll-target="#sticky" >
       <h2

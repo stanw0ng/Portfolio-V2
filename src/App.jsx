@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 import ShaderCanvas from './components/ShaderCanvas';
 import Navigation from './components/Navigation';
@@ -15,7 +15,18 @@ function App() {
   const scrollInstanceRef = useRef(null);
   const resizeObserverRef = useRef(null);
 
+  const [navHeight, setNavHeight] = useState(0);
+  
   const [activeSection, setActiveSection] = useState('info-section');
+  
+  useLayoutEffect(() => {
+    const navElement = document.querySelector('nav');
+    if (navElement) {
+      const computedStyle = window.getComputedStyle(navElement);
+      const heightWithMargin = navElement.offsetHeight + parseFloat(computedStyle.marginTop) + parseFloat(computedStyle.marginBottom);
+      setNavHeight(heightWithMargin);
+    }
+  }, []);
 
   useEffect(() => {
     scrollInstanceRef.current = new LocomotiveScroll({
@@ -90,7 +101,7 @@ function App() {
       } else {
         // Scroll to the section with the offset
         scrollInstanceRef.current.scrollTo(target, {
-          offset: 0,
+          offset: -navHeight,
           duration: 800,
         });
       }
@@ -99,7 +110,6 @@ function App() {
       scrollInstanceRef.current.update();
     }
   };
-  
   
   return (
     <div ref={contentRef} data-scroll-container>
