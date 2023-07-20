@@ -24,6 +24,26 @@
   }
 }
 
+@media (max-width: 1370px) {
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+
+    h2 {
+      width: fit-content;
+      text-align: center;
+    }
+
+    a {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
 @media (max-width: 414px) {
   .contact-container {
     font-size: .75rem;
@@ -34,23 +54,6 @@
 
       a {
         margin-bottom: 0;
-      }
-    }
-  
-    .social-links {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      margin: 1rem auto 0;
-      font-size: 1rem;
-  
-      h2 {
-        text-align: center;
-        margin: 0 .5rem;
-      }
-
-      a {
-        margin-bottom: .25rem;
       }
     }
   }

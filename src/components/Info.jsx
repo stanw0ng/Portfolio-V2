@@ -13,7 +13,7 @@ function Info({ scrollToSection, activeSection }) {
 
       <div className='left-info'>
         <p>
-          Stanley Wong is a Toronto-based developer and designer. He has a background in architecture and industrial design which continues to inform his work today. He is interested in crafting thoughtful and engaging experiences for digital platforms.<br/><br/>
+          <span className='italics'>Stanley Wong</span> is a Toronto-based <span className='italics'>developer</span> and <span className='italics'>designer</span>. He has a background in <span className='italics'>architecture</span> and <span className='italics'>industrial design</span> which continues to inform his work today. He is interested in crafting thoughtful and engaging experiences for <span className='italics'>digital platforms</span>.<br/><br/>
 
           Curious by nature, he frequently adopts new languages and technologies into his practice. Currently, he is exploring the possibilities of Python and Three.js.<br/><br/>
 

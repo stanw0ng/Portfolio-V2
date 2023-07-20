@@ -15,9 +15,45 @@ function App() {
   const scrollInstanceRef = useRef(null);
   const resizeObserverRef = useRef(null);
 
+  // For dynamically offsetting the navHeight
   const [navHeight, setNavHeight] = useState(0);
   
+  // Tells the nav which section the scrollbar is at
   const [activeSection, setActiveSection] = useState('info-section');
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    const handleMouseDown = () => {
+      setIsClicked(true);
+    };
+
+    const handleMouseUp = () => {
+      setIsClicked(false);
+    };
+
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   
   useLayoutEffect(() => {
     const navElement = document.querySelector('nav');
@@ -32,7 +68,7 @@ function App() {
     scrollInstanceRef.current = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
-      // Enables Loco for other devices, this is especially important for sticky elements which have to be manage specifically by Locomotive scroll (other than setting `position: sticky`)
+      // Enables LoScroll for other devices, this is especially important for sticky elements which has to be managed by Locomotive scroll rather than setting `position: sticky`
       smartphone: {
         smooth: true
       },
@@ -63,7 +99,7 @@ function App() {
         }
       });
 
-      setActiveSection(activeSectionId); // Update the active section
+      setActiveSection(activeSectionId);
     });
 
     // Create a ResizeObserver to update the scrollbar when accordion content changes
@@ -114,6 +150,10 @@ function App() {
   return (
     <div ref={contentRef} data-scroll-container>
       <ShaderCanvas />
+      <div
+        className={`custom-cursor${isClicked ? ' is-clicked' : ''}`}
+        style={{ left: mousePosition.x, top: mousePosition.y }}
+      />
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}

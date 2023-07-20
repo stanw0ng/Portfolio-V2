@@ -12,6 +12,37 @@
   box-sizing: border-box;
 }
 
+html {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-opaque white dot (adjust the opacity as needed) */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  /* Center the custom cursor */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Add transition for smooth cursor size change */
+  transition: width 0.3s, height 0.3s;
+}
+
+/* Hide the custom cursor when it hovers over a link (anchor element) */
+a:hover {
+  cursor: none;
+}
+
+/* Increase the size of the cursor when clicking */
+.custom-cursor.is-clicked {
+  width: 4rem;
+  height: 4rem;
+}
+
 @media (max-width: 600px) {
   #root {
     flex-shrink: 0;

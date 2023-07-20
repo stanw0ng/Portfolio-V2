@@ -11,6 +11,17 @@
 
 }
 
+@font-face {
+  font-family: 'Maxi';
+  src: url('./fonts/ABCMaxiRoundMono-Light-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Editorial-Old';
+  src: url('./fonts/PPEditorialOld-UltralightItalic.otf') format('opentype');
+  font-style: italic;
+}
+
 /* Reset box sizing */
 *,
 *::before,
@@ -86,4 +97,8 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow: visible;
+}
+
+.italics {
+  font-family: 'Editorial-Old';
 }

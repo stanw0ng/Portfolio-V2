@@ -71,44 +71,45 @@
 .right-info {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
+  gap: .5rem;
+  padding: 2rem 0 0 3rem;
 
   p {
     text-align: left;
-    margin-bottom: 2rem;
   }
 
   .skills-text {
     font-size: 2rem;
+    margin-bottom: 0;
   }
 
   ul {
-    gap: 2rem;
-  }
 
-  h1 {
-    width: 1rem;
-    margin-right: 2rem;
-  }
-
-  li {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 1rem;
-    text-align: left;
-    align-items: center;
-    font-size: 1.5rem;
-    width: 100%;
-  }
-
-  .skill-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .skill-category {
-    margin-bottom: .25rem;
+    li {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      text-align: left;
+      align-items: center;
+      font-size: 1.5rem;
+      width: 100%;
+  
+      h1 {
+        font-size: 4rem;
+        width: 1rem;
+        margin-right: 2rem;
+      }
+  
+      .skill-container {
+        display: flex;
+        flex-direction: column;
+  
+        .skill-category {
+          font-size: 1.25rem;
+          margin-bottom: .25rem;
+        }
+      }
+    }
   }
 }
 
