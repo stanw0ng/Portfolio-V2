@@ -13,11 +13,10 @@
 
 @font-face {
   font-family: 'Laica';
-  src: 
+  src:
+    url('./fonts/ABCLaica-RegularItalic.ttf') format('truetype'),
     url('./fonts/ABCLaica-RegularItalic-Trial.woff') format('woff'), 
-    url('./fonts/ABCLaica-RegularItalic-Trial.woff2') format('woff2'),
-    url('./fonts/ABCLaica-RegularItalic-Trial.otf') format('truetype');
-
+    url('./fonts/ABCLaica-RegularItalic-Trial.woff2') format('woff2');
   font-style: italic;
 }
 
