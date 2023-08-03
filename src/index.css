@@ -18,6 +18,7 @@
     url('./fonts/ABCLaica-RegularItalic-Trial.woff') format('woff'), 
     url('./fonts/ABCLaica-RegularItalic-Trial.woff2') format('woff2');
   font-style: italic;
+  font-display: swap
 }
 
 /* Reset box sizing */
