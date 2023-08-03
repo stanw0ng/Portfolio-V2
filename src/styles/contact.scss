@@ -47,7 +47,7 @@
 @media (max-width: 414px) {
   .contact-container {
     font-size: .75rem;
-    margin: 21rem 0 18rem 0;
+    margin: 16rem 0 21rem 0;
   
     h1 {
       margin: .5rem;
@@ -56,6 +56,16 @@
         margin-bottom: 0;
       }
     }
+
+    .social-links {
+      margin: 1rem  auto;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    
   }
 }
 
