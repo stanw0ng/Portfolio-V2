@@ -14,7 +14,6 @@
 @font-face {
   font-family: 'Maxi-Round';
   src: url('./fonts/ABCMaxiRound-Bold-Trial.otf') format('truetype');
-
 }
 
 @font-face {
@@ -23,7 +22,6 @@
     url('./fonts/ABCLaica-RegularItalic.ttf') format('truetype'),
     url('./fonts/ABCLaica-RegularItalic-Trial.woff') format('woff'), 
     url('./fonts/ABCLaica-RegularItalic-Trial.woff2') format('woff2');
-  font-style: italic;
   font-display: swap
 }
 
@@ -105,5 +103,5 @@ body {
 }
 
 .italics {
-  font-family: 'Maxi-Round', 'Times New Roman', Times, serif;
+  font-family: 'Laica', 'Times New Roman', Times, serif;
 }
