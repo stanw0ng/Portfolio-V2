@@ -7,7 +7,8 @@ class CustomShaderMaterial extends ShaderMaterial {
     super({
       uniforms: {
         u_time: { value: 0 },
-        u_resolution: { value: [window.innerWidth, window.innerHeight] }
+        u_resolution: { value: [window.innerWidth, window.innerHeight] },
+        
       },
       fragmentShader: `
           precision mediump float;
@@ -65,9 +66,8 @@ class CustomShaderMaterial extends ShaderMaterial {
             vec3 white = vec3(1.0);
             vec3 color = vec3(0.0);
 
-
             // part 1 - set up a grid of cells
-            uv = uv * 5.0;
+            uv = uv * 4.0;
             vec2 gridId = floor(uv);
             vec2 gridUv = fract(uv);
             color = vec3(gridId, 0.0);
@@ -123,13 +123,20 @@ class CustomShaderMaterial extends ShaderMaterial {
             float t = mix(dotTl, dotTr, gridUv.x);
             float perlin = mix(b, t, gridUv.y);
 
+            // Define your starting and ending colors
+            vec3 startingColor = vec3(0.0, 0.15, .06); // Green Channel
+            vec3 endingColor = vec3(0.0, .08, .35);   // Blue Channel
+
+            // Interpolate between the starting and ending colors using the Perlin noise value
+            vec3 interpolatedColor = mix(startingColor, endingColor, perlin);
+
             // part 4.3 - display perlin noise
 
             // Blood Cell Theme
             // color = vec3(1.0, perlin + 0.2, perlin);
 
             // Earth Theme
-            color = vec3(0.0, 0.28, perlin + .25);
+            color = interpolatedColor;
 
             // part 4.5 - update randomGradient function with time
 

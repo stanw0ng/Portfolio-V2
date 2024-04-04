@@ -7,7 +7,7 @@ import { media_openbook, media_sous, media_portfolio2, media_anony, media_wine, 
 function Projects() {
 
   return (
-    <section className='project-list'>
+    <section className='project-list' tabIndex="0">
 
       <h2 className='date-year'>2023</h2>
 
